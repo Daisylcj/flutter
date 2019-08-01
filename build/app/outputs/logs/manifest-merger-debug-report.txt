@@ -9,7 +9,7 @@ INJECTED from D:\my\lcjflutter\android\app\src\debug\AndroidManifest.xml:1:1-7:1
 INJECTED from D:\my\lcjflutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from D:\my\lcjflutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 	package
-		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:2:5-37
+		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:2:5-38
 		INJECTED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml
 		INJECTED from D:\my\lcjflutter\android\app\src\debug\AndroidManifest.xml
 	android:versionName
@@ -25,12 +25,12 @@ INJECTED from D:\my\lcjflutter\android\app\src\debug\AndroidManifest.xml:1:1-7:1
 application
 ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:9:5-32:19
 	android:label
-		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:11:9-36
 	android:icon
 		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:12:9-43
 	android:name
 		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:10:9-57
-activity#com.example.lcjflutter.MainActivity
+activity#com.example.flutterdemo.MainActivity
 ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:13:9-31:20
 	android:launchMode
 		ADDED from D:\my\lcjflutter\android\app\src\main\AndroidManifest.xml:15:13-43
