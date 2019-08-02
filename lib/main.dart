@@ -111,10 +111,17 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:flutter/foundation.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(new MyApp(
+  //使用List.generate构造函数生成拥有10000个字符串的列表
+  items:new List<String>.generate(10000, (i) => "item $i")
+));
 
 class MyApp extends StatelessWidget {
+  final List<String> items;
+  MyApp({Key key, @required this.items}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var title='Welcome to Flutter';
@@ -124,17 +131,66 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text(title),
         ),
-        body:new Stack(
-          children: <Widget>[
-            new Center(child: new CircularProgressIndicator()),
-            new Center(
-              child: new FadeInImage.memoryNetwork(
-                placeholder:kTransparentImage,
-                image:src
-              ),
-            )
-          ],
-        )
+        body: new ListView.builder(//ListView的构造函数需要一次创建所有项目，但ListView.builder的构造函数不需要，它将在列表项滚动到屏幕上时创建该列表项。
+          itemCount: items.length,
+          itemBuilder: (context,index){
+            return new ListTile(
+              title: new Text('${items[index]}'),
+            );
+          },
+        ),
+        // body: new Container(
+        //   margin:new EdgeInsets.symmetric(vertical: 20.0),
+        //   height:200.0,
+        //   child: new ListView(
+        //     scrollDirection: Axis.horizontal,
+        //     children: <Widget>[
+        //       new Container(
+        //         width: 160.0,
+        //         color: Colors.red,
+        //       ),
+        //       new Container(
+        //         width: 160.0,
+        //         color: Colors.blue,
+        //       ),
+        //       new Container(
+        //         width: 160.0,
+        //         color: Colors.yellow,
+        //       ),
+        //       new Container(
+        //         width: 160.0,
+        //         color: Colors.green,
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // body: new ListView(
+        //   children: <Widget>[
+        //     new ListTile(
+        //       leading: new Icon(Icons.map),
+        //       title: new Text('A'),
+        //     ),
+        //     new ListTile(
+        //       leading: new Icon(Icons.phone),
+        //       title: new Text('B'),
+        //     ),
+        //     new ListTile(
+        //       leading: new Icon(Icons.photo),
+        //       title: new Text('C'),
+        //     )
+        //   ],
+        // ),
+        // body:new Stack(
+        //   children: <Widget>[
+        //     new Center(child: new CircularProgressIndicator()),
+        //     new Center(
+        //       child: new FadeInImage.memoryNetwork(
+        //         placeholder:kTransparentImage,
+        //         image:src
+        //       ),
+        //     )
+        //   ],
+        // )
         //body:new Image.network(src)
         // body: new Center(
         //   //child: new Text('Hello World,i am lcj,lll'),
